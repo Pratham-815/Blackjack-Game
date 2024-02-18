@@ -22,6 +22,7 @@ def calculate_score(cards):
 
 
 def compare(user_score, computer_score):
+    """Compares the user and computer score"""
 
     if user_score>21 and computer_score>21:
         print("You went over...You loose")
@@ -49,10 +50,12 @@ def compare(user_score, computer_score):
 
 
 def play_game():
+    """Function to play the game"""
     
     from art import logo
     print(logo)
 
+    # Deal the user and computer 2 cards each using deal_card()
     user_cards = []
     computer_cards = []
     is_game_over = False
@@ -61,6 +64,7 @@ def play_game():
         user_cards.append(deal_cards())
         computer_cards.append(deal_cards())
 
+    # Recheck the score with every new card drawn
     while not is_game_over:
         user_score = calculate_score(user_cards)
         computer_score = calculate_score(computer_cards)
@@ -78,6 +82,7 @@ def play_game():
             else:
                 is_game_over = True
 
+    # Once the user is done, it's time for computer to play the game
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(deal_cards())
         computer_score = calculate_score(computer_cards)
