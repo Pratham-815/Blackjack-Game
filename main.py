@@ -22,4 +22,15 @@ def calculate_score(cards):
     return sum(cards)
 
 
+def compare(user_score, computer_score):
+
+    if user_score>21 and computer_score>21:
+        print("You went over...You loose")
+
+    if user_score==computer_score:
+        print("Its a draw")
+
+    elif computer_score==0:
+        print("You lost...Computer has a blackjack")
+
     
