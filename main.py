@@ -33,4 +33,17 @@ def compare(user_score, computer_score):
     elif computer_score==0:
         print("You lost...Computer has a blackjack")
 
-    
+    elif user_score==0:
+        print("You win...It was a blackjack!!!")
+
+    elif user_score>21:
+        print("You lost...Your score went over 21")
+
+    elif computer_score>21:
+        print("You win...Computer's score went over 21")
+
+    elif user_score>computer_score:
+        print("You win...You score is greater than that of computer's")
+
+    else:
+        print("You lost...Computer's score is greater than that of your's")
